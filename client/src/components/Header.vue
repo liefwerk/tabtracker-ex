@@ -9,7 +9,7 @@
       </v-btn>
     </v-toolbar-items>
     <v-spacer></v-spacer>
-    <v-toolbar-items>
+    <v-toolbar-items v-if="!$store.state.isUserLoggedIn">
       <v-btn text dark router to="login">Login</v-btn>
       <v-btn text dark router to="register">Signup</v-btn>
     </v-toolbar-items>
