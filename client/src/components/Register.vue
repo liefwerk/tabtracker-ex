@@ -1,33 +1,27 @@
 <template>
-  <v-container fill-height>
-    <v-row align="center" justify="center">
-      <v-col cols="12" >
-        <v-card ref="form">
-          <v-card-text>
-            <v-text-field
-              label="Email"
-              v-model="email"
-            ></v-text-field>
-            <br>
-            <v-text-field
-              label="Password"
-              type="password"
-              v-model="password"
-              autocomplete="new-password"
-            ></v-text-field>
-            <br>
-            <div class="danger-alert" v-html="error" />
-            <br>
-            <v-btn
-              class="cyan"
-              @click="register">
-              Register
-            </v-btn>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+    <v-card ref="form" class="pa-md-auto mx-auto my-10" max-width="500">
+      <v-card-text>
+        <v-text-field
+          label="Email"
+          v-model="email"
+        ></v-text-field>
+        <br>
+        <v-text-field
+          label="Password"
+          type="password"
+          v-model="password"
+          autocomplete="new-password"
+        ></v-text-field>
+        <br>
+        <div class="danger-alert" v-html="error" />
+        <br>
+        <v-btn
+          class="green lighten-1" dark
+          @click="register">
+          Register
+        </v-btn>
+      </v-card-text>
+    </v-card>
 </template>
 
 <script>

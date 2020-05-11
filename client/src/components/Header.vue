@@ -1,6 +1,6 @@
 <template>
-  <v-toolbar class="cyan" dense>
-    <v-toolbar-title class="mr-4 white-text">
+  <v-toolbar dark class="green lighten-1">
+    <v-toolbar-title class="mr-4">
       TabTracker
     </v-toolbar-title>
   </v-toolbar>
