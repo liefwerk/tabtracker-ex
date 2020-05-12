@@ -18,8 +18,8 @@
       <div class="danger-alert" v-if="error">
         {{error}}
       </div>
-      <v-btn dark class="green lighten-2 my-5" @click="createSong">
-        Create Song
+      <v-btn dark class="green lighten-2 my-5" @click="saveSong">
+        Save Song
       </v-btn>
     </v-flex>
   </v-layout>
@@ -38,7 +38,7 @@ export default {
     }
   },
   methods: {
-    createSong: async function () {
+    saveSong: async function () {
       this.error = null
       const areAllFieldsFilledIn = Object
         .keys(this.song)
@@ -47,15 +47,26 @@ export default {
         this.error = 'Please fill in all the required fields'
         return
       }
-
+      const songId = this.$store.state.route.params.songId
       try {
-        await SongsService.post(this.song)
+        await SongsService.put(this.song)
         this.$router.push({
-          name: 'songs'
+          name: 'song',
+          params: {
+            songId: songId
+          }
         })
       } catch (err) {
         console.log(err)
       }
+    }
+  },
+  async mounted () {
+    try {
+      const songId = this.$store.state.route.params.songId
+      this.song = (await SongsService.show(songId)).data
+    } catch (err) {
+      console.log(err)
     }
   },
   components: {

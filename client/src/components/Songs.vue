@@ -18,7 +18,7 @@
               <div class="song-genre">
                 {{song.genre}}
               </div>
-              <v-btn dark class="green lighten-2 my-5" :to="{ name: 'song', params: { id: song.id }}">View</v-btn>
+              <v-btn dark class="green lighten-2 my-5" :to="{ name: 'song', params: { songId: song.id }}">View</v-btn>
             </v-flex>
             <v-flex xs6>
               <img class="album-image" :src="song.albumImage" />
