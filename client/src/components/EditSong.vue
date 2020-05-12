@@ -38,7 +38,7 @@ export default {
     }
   },
   methods: {
-    saveSong: async function () {
+    async saveSong () {
       this.error = null
       const areAllFieldsFilledIn = Object
         .keys(this.song)

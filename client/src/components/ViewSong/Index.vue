@@ -2,7 +2,7 @@
   <div>
     <v-layout class="container my-10">
       <song-metadata :song="song"></song-metadata>
-      <youtube :song="song"></youtube>
+      <youtube :youtubeId="song.youtubeId"></youtube>
     </v-layout>
     <v-layout my-10 mx-10>
       <tabs :song="song"></tabs>

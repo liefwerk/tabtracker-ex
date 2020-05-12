@@ -1,5 +1,5 @@
 <template>
-  <v-flex xs6 class="ml-2">
+  <v-flex xs6 class="ml-4">
     <panel title="Lyrics">
       <pre class="lyrics my-5">
         {{song.lyrics}}
