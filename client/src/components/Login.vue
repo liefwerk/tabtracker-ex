@@ -1,33 +1,41 @@
 <template>
-    <v-card ref="form" class="pa-md-auto mx-auto my-10" max-width="500">
-      <v-card-text>
-        <v-text-field
-          label="Email"
-          v-model="email"
-        ></v-text-field>
-        <br>
-        <v-text-field
-          label="Password"
-          type="password"
-          v-model="password"
-          autocomplete="new-password"
-        ></v-text-field>
-        <br>
-        <div class="danger-alert" v-html="error" />
-        <br>
-        <v-btn
-          class="green lighten-1" dark
-          @click="login">
-          login
-        </v-btn>
-      </v-card-text>
-    </v-card>
+  <v-layout>
+    <v-flex xs6 offset-xs3 my-10>
+      <panel title="Let's connect !">
+        <form name="tab-tracker-form" autocomplete="off">
+          <v-text-field
+            label="Email"
+            v-model="email"
+          ></v-text-field>
+          <br>
+          <v-text-field
+            label="Password"
+            type="password"
+            v-model="password"
+            autocomplete="new-password"
+          ></v-text-field>
+          <br>
+          <div class="danger-alert" v-html="error" />
+          <br>
+          <v-btn
+            class="green lighten-1" dark
+            @click="login">
+            login
+          </v-btn>
+        </form>
+      </panel>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
 import AuthenticationService from '../services/AuthenticationService'
+import Panel from '../components/Panel'
 
 export default {
+  components: {
+    Panel
+  },
   data () {
     return {
       email: '',
