@@ -15,9 +15,9 @@
       <v-layout class="px-5 py-5">
         <v-flex xs6>
           <div class="song-title">
-          {{song.title}}
+            {{song.title}}
           </div>
-            <div class="song-artist">
+          <div class="song-artist">
             {{song.artist}}
           </div>
           <div class="song-genre">
