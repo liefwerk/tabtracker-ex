@@ -2,7 +2,7 @@
   <v-layout>
     <v-flex xs6 offset-xs3 my-10>
       <panel title="Let's connect !">
-        <form name="tab-tracker-form" autocomplete="off">
+        <form name="tab-tracker-form" autocomplete="off" class="px-4 py-4">
           <v-text-field
             label="Email"
             v-model="email"
@@ -30,12 +30,8 @@
 
 <script>
 import AuthenticationService from '../services/AuthenticationService'
-import Panel from '../components/Panel'
 
 export default {
-  components: {
-    Panel
-  },
   data () {
     return {
       email: '',
@@ -52,6 +48,9 @@ export default {
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({
+          name: 'songs'
+        })
       } catch (error) {
         this.error = error.response.data.error
       }
@@ -62,7 +61,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.error {
-  color: red
-}
 </style>

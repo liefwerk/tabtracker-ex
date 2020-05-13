@@ -1,7 +1,15 @@
 <template>
-  <v-flex xs6 >
+  <v-flex xs6>
     <panel title="Song Metadata">
-      <v-btn slot="action" class="blue-grey lighten-5 elevation-2" light small absolute right middle router :to="{ name: 'song-edit', params: { songId: song.id }}">
+      <v-btn slot="action" class="blue-grey lighten-5 elevation-2" light small absolute right middle
+        router :to="{
+          name: 'song-edit',
+          params () {
+            return {
+              songId: song.id
+            }
+          }
+        }">
           <v-icon>edit</v-icon>
         </v-btn>
       <v-layout class="px-5 py-5">
@@ -27,12 +35,8 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
 
 export default {
-  components: {
-    Panel
-  },
   props: [
     'song'
   ]

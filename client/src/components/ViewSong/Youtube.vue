@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
 
 export default {
   data () {
@@ -20,9 +19,6 @@ export default {
     youtubeUrl () {
       return 'https://www.youtube.com/embed/' + this.youtubeId
     }
-  },
-  components: {
-    Panel
   },
   props: [
     'youtubeId'
