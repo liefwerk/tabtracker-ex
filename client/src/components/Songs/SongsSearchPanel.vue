@@ -1,5 +1,5 @@
 <template>
-  <v-flex xs6 offset-xs3 mt-10>
+  <v-flex xs4 class="my-auto">
     <panel title="Search">
       <v-text-field
         class="px-4"
