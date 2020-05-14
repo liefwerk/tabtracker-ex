@@ -1,8 +1,9 @@
 <template>
   <v-flex xs6 offset-xs3>
     <panel title="Songs">
-      <v-btn slot="action" class="blue-grey lighten-5 elevation-2" fab light small absolute right middle router to="/songs-create">
+      <v-btn slot="action" class="blue-grey lighten-5 elevation-2" light small right middle router to="/songs-create">
         <v-icon>add</v-icon>
+        Add a song
       </v-btn>
       <div v-for="song in songs" :key="song.id" class="song">
 
