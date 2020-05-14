@@ -1,13 +1,11 @@
 <template>
-  <v-flex xs4 class="my-auto">
-    <panel title="Search">
-      <v-text-field
-        class="px-4"
-        label="Search by song title, artist, album, genre"
-        v-model="search"
-      ></v-text-field>
-    </panel>
-  </v-flex>
+  <panel title="Search">
+    <v-text-field
+      class="px-4"
+      label="Search by song title, artist, album, genre"
+      v-model="search"
+    ></v-text-field>
+  </panel>
 </template>
 
 <script>

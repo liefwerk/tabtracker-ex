@@ -1,32 +1,30 @@
 <template>
-  <v-flex xs6>
-    <panel title="Songs">
-      <v-btn slot="action" class="blue-grey lighten-5 elevation-2" light small right middle router to="/songs-create">
-        <v-icon>add</v-icon>
-        Add a song
-      </v-btn>
-      <div v-for="song in songs" :key="song.id" class="song">
+  <panel title="Songs">
+    <v-btn slot="action" class="blue-grey lighten-5 elevation-2" light small right middle router to="/songs-create">
+      <v-icon>add</v-icon>
+      Add a song
+    </v-btn>
+    <div v-for="song in songs" :key="song.id" class="song">
 
-        <v-layout>
-          <v-flex xs6>
-            <div class="song-title">
-              {{song.title}}
-            </div>
-            <div class="song-artist">
-              {{song.artist}}
-            </div>
-            <div class="song-genre">
-              {{song.genre}}
-            </div>
-            <v-btn dark class="green lighten-2 my-5" :to="{ name: 'song', params: { songId: song.id }}">View</v-btn>
-          </v-flex>
-          <v-flex xs6>
-            <img class="album-image" :src="song.albumImage" />
-          </v-flex>
-        </v-layout>
-      </div>
-    </panel>
-  </v-flex>
+      <v-layout>
+        <v-flex xs6>
+          <div class="song-title">
+            {{song.title}}
+          </div>
+          <div class="song-artist">
+            {{song.artist}}
+          </div>
+          <div class="song-genre">
+            {{song.genre}}
+          </div>
+          <v-btn dark class="green lighten-2 my-5" :to="{ name: 'song', params: { songId: song.id }}">View</v-btn>
+        </v-flex>
+        <v-flex xs6>
+          <img class="album-image" :src="song.albumImage" />
+        </v-flex>
+      </v-layout>
+    </div>
+  </panel>
 </template>
 
 <script>

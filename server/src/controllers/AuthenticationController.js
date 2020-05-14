@@ -4,12 +4,9 @@ const config = require('../config/config')
 
 function jwtSignUser (user) {
   const ONE_WEEK = 60 * 60 * 24 * 7
-  return jwt.sign({
-    data: user},
-    config.authentication.jswtSecret, {
-      expiresIn: ONE_WEEK
-    }
-  )
+  return jwt.sign(user, config.authentication.jwtSecret, {
+    expiresIn: ONE_WEEK
+  })
 }
 
 module.exports = {
@@ -25,10 +22,9 @@ module.exports = {
       res.status(400).send({
         error: 'This email account is already in use.'
       })
-      // email already exist
     }
   },
-  async login (req, res){
+  async login (req, res) {
     try {
       const {email, password} = req.body
       const user = await User.findOne({
@@ -36,15 +32,16 @@ module.exports = {
           email: email
         }
       })
+
       if (!user) {
-        res.status(403).send({
+        return res.status(403).send({
           error: 'The login information was incorrect'
         })
       }
 
       const isPasswordValid = await user.comparePassword(password)
       if (!isPasswordValid) {
-        res.status(403).send({
+        return res.status(403).send({
           error: 'The login information was incorrect'
         })
       }
@@ -56,7 +53,7 @@ module.exports = {
       })
     } catch (err) {
       res.status(500).send({
-        error: `${err}, an error has occured trying to login`
+        error: 'An error has occured trying to log in'
       })
     }
   }
